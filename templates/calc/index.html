@@ -1,20 +1,20 @@
 {% extends 'calc/base.html' %}
 {% block content %}
-<h1>Web Calculator</h1>
 
 {% if request.user.is_authenticated %}
+<div class="side-auth">
 <a href="{% url 'calc:user_logout' %}">Logout</a>
-<h2>Welcome {{ request.user }}</h2>
-
+<a href="{% url 'calc:profile' %}"> {{ request.user }} </a>
+</div>
 {% else %}
-<div>
+<div class="side-auth">
 <a href="{% url 'calc:user_login' %}">Login</a>
 <a href="{% url 'calc:register' %}">Register</a>
 </div>
 {% endif %}
-
+<nav>
 <a href="{% url 'calc:calculate' %}">calculate</a>
 <a href="{% url 'calc:list_calc' %}">History</a>
 <a href="{% url 'calc:profile' %}">Profile</a>
-
+</nav>
 {% endblock content %}

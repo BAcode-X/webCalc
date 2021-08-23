@@ -48,7 +48,7 @@ class Calculate(LoginRequiredMixin, CreateView):
         try:
             history.result = str(eval(history.expression))
         except:
-            history.result = None
+            history.result = "Undefined!"
         history.user = self.request.user
         history.save()
         return render(self.request, 'calc/calculate.html', {
@@ -59,8 +59,6 @@ class Calculate(LoginRequiredMixin, CreateView):
 class ChangeProfile(UpdateView):
     model = USER
     fields = ['nick', 'email','first_name', 'last_name',]
-    # form_class = UserChangeForm
-    # pk_url_kwarg = "pk"
     template_name = 'calc/profile.html'
     success_url = reverse_lazy('calc:index')
     

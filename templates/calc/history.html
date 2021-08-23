@@ -1,10 +1,13 @@
 {% extends 'calc/base.html' %}
 
 {% block content  %}
+<nav>
 <a href="{% url 'calc:index' %}">Home</a>
+<a href="{% url 'calc:calculate' %}">Calculate</a>
+<a href="{% url 'calc:profile' %}">Profile</a>
+</nav>
 {% for obj in object_list %}
 {{ obj }} <br>
 {% endfor %}
-<a href="{% url 'calc:calculate' %}">Calculate</a>
-<a href="{% url 'calc:profile' %}">Profile</a>
+
 {% endblock content %}

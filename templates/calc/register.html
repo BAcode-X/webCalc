@@ -1,6 +1,9 @@
 {% extends 'calc/base.html' %}
 
 {% block content %}
+<nav>
+  <a href="{% url 'calc:index' %}">Home</a>
+</nav>
   <h2>Register</h2>
   <form method="post">
     {% csrf_token %}

@@ -1,7 +1,11 @@
 {% extends 'calc/base.html' %}
 
 {% block calc %}
+<nav>
 <a href="{% url 'calc:index' %}">Home</a>
+<a href="{% url 'calc:list_calc' %}">History</a>
+<a href="{% url 'calc:profile' %}">Profile</a>
+</nav>
 <form action="" method="post">
 {% csrf_token %}
     <input type="text" name="expression" value="{{ expression }}"> = 
@@ -9,6 +13,5 @@
 
     <input type="submit" value="calculate"> 
 </form>
-<a href="{% url 'calc:list_calc' %}">History</a>
-<a href="{% url 'calc:profile' %}">Profile</a>
+
 {% endblock calc %}

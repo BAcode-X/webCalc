@@ -2,6 +2,18 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
+
+/*  */
+.logo{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;    
+}
+
+
 input[type='submit']{
     padding: 0.2em 1em;
     background-color: bisque;
@@ -13,4 +25,24 @@ input[type='submit']{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+.side-auth{
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    float: right;
+}
+
+nav{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+    text-transform: uppercase;
 }

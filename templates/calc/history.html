@@ -6,6 +6,7 @@
     <a href="{% url 'calc:calculate' %}">Calculate</a>
     <a href="{% url 'calc:profile' %}">Profile</a>
 </nav>
+<a href="{% url 'calc:clear' %}"> clear </a>
 <div class="history">
 {% for obj in object_list %}
 {{ obj }}<br><br>

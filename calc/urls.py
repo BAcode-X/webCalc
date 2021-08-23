@@ -1,3 +1,4 @@
+from os import name
 from django.urls import path
 from . import views
 
@@ -11,4 +12,5 @@ urlpatterns = [
     path('calc/', views.Calculate.as_view(), name='calculate'),
     path('history/', views.ListHistory.as_view(), name='list_calc'),
     path('profile/', views.ChangeProfile.as_view(), name='profile'),
+    path('clear-history/', views.DeleteHistory.as_view(), name='clear'),
 ]

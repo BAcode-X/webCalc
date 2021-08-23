@@ -2,13 +2,13 @@ from django.http import request
 import calc
 from django.forms.models import model_to_dict
 from django.urls import reverse_lazy
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, View
 from .forms import CustomUserCreationForm, UserChangeForm
 from .models import History
 
@@ -64,3 +64,15 @@ class ChangeProfile(UpdateView):
     
     def get_object(self, *args):
         return self.model.objects.filter(id=self.request.user.pk).first()
+    
+
+class DeleteHistory(View):
+    model = History
+    success_url = reverse_lazy('calc:list_calc')
+
+    
+    def get(self, request, *args, **kwargs):
+        print(*args)
+        for obj in self.model.objects.filter(user=self.request.user):
+            obj.delete()
+        return HttpResponseRedirect(self.success_url)

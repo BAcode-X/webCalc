@@ -2,12 +2,14 @@
 
 {% block content  %}
 <nav>
-<a href="{% url 'calc:index' %}">Home</a>
-<a href="{% url 'calc:calculate' %}">Calculate</a>
-<a href="{% url 'calc:profile' %}">Profile</a>
+    <a href="{% url 'calc:index' %}">Home</a>
+    <a href="{% url 'calc:calculate' %}">Calculate</a>
+    <a href="{% url 'calc:profile' %}">Profile</a>
 </nav>
+<div class="history">
 {% for obj in object_list %}
-{{ obj }} <br>
-{% endfor %}
+{{ obj }}<br><br>
 
+{% endfor %}
+</div>
 {% endblock content %}

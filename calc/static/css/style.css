@@ -47,3 +47,11 @@ nav{
     gap: 30px;
     text-transform: uppercase;
 }
+
+
+.history{
+    display: flex;
+    /* flex-direction: column; */
+    position: absolute;
+    top: 10em;
+}

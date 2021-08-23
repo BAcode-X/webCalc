@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'calc',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'web_calc.wsgi.application'
 
-
+ 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 

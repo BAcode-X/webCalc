@@ -10,6 +10,17 @@
 </head>
 <body>
 <h1 class="logo">Web Calculator</h1>
+{% if request.user.is_authenticated %}
+<div class="side-auth">
+<a href="{% url 'calc:user_logout' %}">Logout</a>
+<a href="{% url 'calc:profile' %}"> {{ request.user }} </a>
+</div>
+{% else %}
+<div class="side-auth">
+<a href="{% url 'calc:user_login' %}">Login</a>
+<a href="{% url 'calc:register' %}">Register</a>
+</div>
+{% endif %}
 <div class="content">
 {% block content %}{% endblock content %}
 {% block auth %}{% endblock auth %}

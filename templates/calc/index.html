@@ -1,0 +1,17 @@
+{% extends 'calc/base.html' %}
+{% block content %}
+<h1>Web Calculator</h1>
+
+{% if request.user.is_authenticated %}
+<a href="{% url 'calc:user_logout' %}">Logout</a>
+<h1>Welcome {{ request.user }}</h1>
+
+{% else %}
+
+<a href="{% url 'calc:user_login' %}">Login</a>
+<a href="{% url 'calc:register' %}">Register</a>
+
+{% endif %}
+
+
+{% endblock content %}

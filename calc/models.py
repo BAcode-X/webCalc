@@ -28,7 +28,7 @@ USER = get_user_model()
 
 class History(models.Model):
     expression = models.CharField(_('expression'), max_length=400)
-    result = models.CharField(_('result'), max_length=400)
+    result = models.CharField(_('result'), max_length=400, null=True)
 
     user = models.ForeignKey(USER, on_delete=models.CASCADE)
 

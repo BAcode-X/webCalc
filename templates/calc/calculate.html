@@ -1,0 +1,14 @@
+{% extends 'calc/base.html' %}
+
+{% block calc %}
+<a href="{% url 'calc:index' %}">Home</a>
+<form action="" method="post">
+{% csrf_token %}
+    <input type="text" name="expression" value="{{ expression }}"> = 
+    <span class="result">{{ result }}</span>
+
+    <input type="submit" value="calculate"> 
+</form>
+<a href="{% url 'calc:list_calc' %}">History</a>
+<a href="{% url 'calc:profile' %}">Profile</a>
+{% endblock calc %}

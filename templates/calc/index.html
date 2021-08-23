@@ -4,14 +4,17 @@
 
 {% if request.user.is_authenticated %}
 <a href="{% url 'calc:user_logout' %}">Logout</a>
-<h1>Welcome {{ request.user }}</h1>
+<h2>Welcome {{ request.user }}</h2>
 
 {% else %}
-
+<div>
 <a href="{% url 'calc:user_login' %}">Login</a>
 <a href="{% url 'calc:register' %}">Register</a>
-
+</div>
 {% endif %}
 
+<a href="{% url 'calc:calculate' %}">calculate</a>
+<a href="{% url 'calc:list_calc' %}">History</a>
+<a href="{% url 'calc:profile' %}">Profile</a>
 
 {% endblock content %}

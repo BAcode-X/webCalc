@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+
+input[type='submit']{
+    padding: 0.2em 1em;
+    background-color: bisque;
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
